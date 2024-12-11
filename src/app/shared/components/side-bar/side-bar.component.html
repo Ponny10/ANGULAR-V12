@@ -1,0 +1,51 @@
+<div class="side-bar">
+    <div><i class="bi bi-three-dots"></i></div>
+    <ul class="side-bar__list list-one">
+        @for(item of optionsSideBar.defaultOptions; track item.name) {
+            <li [routerLink]="item.router" routerLinkActive="router-link-active">
+                <div class="list-wrapper-item">
+                    <i class="uil {{item.icon}}"></i>
+                    <span class="side-bar__list list-label">{{item.name}}</span>
+                </div>
+            </li>
+        }
+        <!-- <li [routerLink]="item.router" [queryParams]="item.query" *ngFor="let item of mainMenu.defaultOptions">
+            <div class="list-wrapper-item">
+                <i [ngClass]="['uil',item.icon]"></i>
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li> -->
+    </ul>
+    <div class="side-bar__separator"></div>
+    <ul class="side-bar__list list-two">
+        @for (item of optionsSideBar.accessLink; track item.name) {
+            <li>
+                <div class="list-wrapper-item">
+                    <i class="uil {{item.icon}}"></i>
+                    <span class="side-bar__list">{{item.name}}</span>
+                </div>
+            </li>
+        }
+        <!-- <li *ngFor="let item of mainMenu.accessLink">
+            <div class="list-wrapper-item">
+                <i [ngClass]="['uil',item.icon]"></i>
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li> -->
+    </ul>
+    <div class="side-bar__separator line-separator"></div>
+    <ul class="side-bar__list list-three">
+        @for (item of customOptions; track item.name) {
+            <li>
+                <div class="list-wrapper-item">
+                    <span class="side-bar__list list-label">{{item.name}}</span>
+                </div>
+            </li>
+        }
+        <!-- <li *ngFor="let item of customOptions">
+            <div class="list-wrapper-item">
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li> -->
+    </ul>
+</div>

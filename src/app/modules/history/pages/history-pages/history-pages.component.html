@@ -1,0 +1,4 @@
+<div class="history-page">
+    <app-search (callSearch)="search($event)" />
+    <app-list-player [tracks]="resultSearch | async" />
+</div>
